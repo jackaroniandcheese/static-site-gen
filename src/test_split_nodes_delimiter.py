@@ -1,10 +1,10 @@
 import unittest
-from inline_markdown import split_nodes_delimiter
+from inline_markdown import split_nodes_delimiter, extract_markdown_images, extract_markdown_links
 from textnode import TextNode, TextType
 
 class TestSplitNodesDelimiter(unittest.TestCase):
    # unittest.util._MAX_LENGTH = 999999999    
-
+    
     def test_text(self):
         node = TextNode("This is simply raw text", TextType.TEXT)
         new_nodes = split_nodes_delimiter([node], "_", TextType.TEXT)
