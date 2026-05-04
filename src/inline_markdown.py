@@ -20,6 +20,10 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
         
     return new_nodes
 
+def extract_title(markdown):
+    header = markdown.split("\n")[0]
+    return header[1:].strip()
+
 def extract_markdown_images(text):
     return re.findall(r"!\[([^\[\]]*)\]\(([^\(\)]*)\)", text)
 

@@ -1,17 +1,8 @@
-from textnode import TextNode, TextType
-import os
-import os.path as p
-import shutil
+from copy_contents import copy_contents
+from generate_page import generate_page
 
 def main():
-    tn = TextNode("dummy text", TextType.TEXT)
-    print(tn)
-
-def copy_contents(subdirectory):
-    print("Checking if subdirectory exists")
-    if p.exists("../public"):
-        print("Deleting public")
-        shutil.rmtree("../public")
-
+    copy_contents("static", "public")
+    generate_page("content/index.md", "template.html", "public/index.html")
 
 main()
